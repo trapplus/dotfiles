@@ -1,0 +1,1 @@
+/home/trapplus/dotfiles/nvim/init.vim

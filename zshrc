@@ -32,23 +32,40 @@ else
 fi
 
 # git
-alias gc="git checkout"
+alias gco="git checkout"
 alias gb="git branch"
 alias gcm="git commit -m"
 alias gm="git merge"
+alias gs="git status"
+alias gad="git add ."
+alias ga="git add"
+
 # shell util
-alias ff="fastfetch"
-alias cff="clear&&fastfetch"
+alias ff="fastfetch -c hypr"
+alias fff="fastfetch -c groups"
+alias cff="clear&&fastfetch -c hypr"
+alias cfff="clear&&fastfetch -c groups"
 alias b="btop"
 alias h="htop"
 alias c="clear"
 alias erc="nvim /home/$USER/.zshrc"
+alias cmx="cmatrix"
 
 # programming
 alias d="docker"
-alias pyvenv="source ./.venv/bin/activate"
+alias pyv="source ./.venv/bin/activate"
 alias py="python3"
 alias cg="cargo"
+alias n="nvim"
+
+#android-tools
+alias fb="fastboot"
+alias ad="adb"
+alias arr="adb reboot recovery"
+alias asl="adb reboot sideload"
+alias ffb="fastboot flash boot"
+alias ffr="fastboot flash recovery"
+alias frr="fastboot reboot recovery"
 
 # CD{1..6} aliases
 alias cd2="cd ..&&cd .."

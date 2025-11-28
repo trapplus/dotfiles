@@ -74,6 +74,8 @@ alias cd4="cd ..&&cd ..&&cd ..&&cd .."
 alias cd5="cd ..&&cd ..&&cd ..&&cd ..&&cd .."
 alias cd6="cd ..&&cd ..&&cd ..&&cd ..&&cd ..&&cd .."
 
+# memes
+alias code10="echo Ой бля пузо спалил"
 # z {dir_name} init
 eval "$(zoxide init zsh)"
 

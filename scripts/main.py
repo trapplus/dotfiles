@@ -1,14 +1,48 @@
-from install import manager
+import sys
 
-def main(mg: object):
-    mg.ensure_oh_my_zsh()
-    mg.install_plugin("zsh-users/zsh-autosuggestions", "zsh-autosuggestions")
-    mg.install_plugin("zsh-users/zsh-syntax-highlighting", "zsh-syntax-highlighting")
-    mg.install_plugin("zsh-users/zsh-completions", "zsh-completions")
-    mg.install_theme()
-    mg.fix_zshrc()
-    print("\nDone! Restart terminal or run: `source ~/.zshrc`")
+from controllers.btop import btop
+from controllers.fastfetch import fastfetch
+from controllers.kitty import kitty
+from controllers.neovim import neovim
+from controllers.zsh import zsh
+
+import display_text
+
+def main():
+    current_controller: zsh | neovim | kitty | fastfetch | btop | None = None 
+
+    choice: int = 0
+
+    while True:
+        print(display_text.text.mode_list.value)
+        choice = int(input("Select mode:").strip())
+        
+        install(mode=choice, controller = current_controller) 
+
+
+
+def install(mode: int, controller: zsh | neovim | kitty | fastfetch | btop | None):
+    match mode:
+        case 1:
+            controller = btop()
+            # controller.install() 
+        case 2:
+            controller = fastfetch()
+            # controller.install() 
+        case 3:
+            controller = kitty()
+            controller.install() 
+        case 4:
+            controller = neovim()
+            controller.install() 
+        case 5:
+            controller = zsh()
+            controller.install() 
+        case 0:
+            print("Exitting...")
+            sys.exit(0)
+        case _:
+            print("Uncorrect choice!")
 
 if __name__ == "__main__":
-    MANAGER = manager()
-    main(mg = MANAGER)
+    main()

@@ -1,16 +1,18 @@
 from typing import Literal
+
 from container import shell as _shell
+
 
 class downloadController:
     def __init__(self) -> None:
         self._shell_link = _shell
-        
-    def download(
-        self, 
-        mode: Literal["git", "pm"], 
+
+    def download(  # TODO: разделить интерфейсы загрузки на два разных метода
+        self,
+        mode: Literal["git", "pm"],
         repo_url: str | None = None,
-        package_name: str | None = None
-        ) -> bool:
+        package_name: str | None = None,
+    ) -> bool:
         """
         Метод для безопастной установки пакетов через поддерживаемые пакетники, или клонирования репозиториев.
         Args:
@@ -27,7 +29,9 @@ class downloadController:
             return True
 
         elif mode == "pm":
-            result =self._shell_link.run_command(f"{self._shell_link.PM_INSTALL} {package_name}")
+            result = self._shell_link.run_command(
+                f"{self._shell_link.PM_INSTALL} {package_name}"
+            )
             if result.stderr:
                 return False
             return True

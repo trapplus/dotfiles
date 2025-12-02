@@ -1,6 +1,6 @@
 from typing import Literal
 
-from container import shell as _shell
+from scripts.container import shell as _shell
 
 
 class downloadController:

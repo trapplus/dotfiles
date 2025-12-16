@@ -9,4 +9,3 @@ vim.cmd([[
   highlight NormalNC guibg=NONE ctermbg=NONE
   highlight NvimTreeNormal guibg=NONE ctermbg=NONE
 ]])
-

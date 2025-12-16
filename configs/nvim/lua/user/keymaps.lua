@@ -15,4 +15,3 @@ keymap("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Открыть дер�
 
 -- Git статус
 keymap("n", "<leader>gs", ":G<CR>", { desc = "Git status" })
-

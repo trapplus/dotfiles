@@ -5,8 +5,8 @@ This repository contains personal configuration files (**dotfiles**) for:
 * **Neovim** — minimal and efficient text editor setup.
 * **Kitty** — fast, GPU-accelerated terminal emulator.
 * **Zsh** — shell configuration with Oh My Zsh and useful plugins.
-* **Btop** — TODO
-* **Fastfetch** — TODO
+* **Btop** — Btop utiliy for system monitoring
+* **Fastfetch** — Beautiful system stat fetch
 
 ## 🧠 Overview
 

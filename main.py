@@ -8,7 +8,16 @@ from scripts.controllers.neovim import neovim
 from scripts.controllers.zsh import zsh
 
 
+def exit(code: int, message: str | None = None):
+    if message:
+        print(f"Exit code: {code}, Reasone:{message}")
+
+    sys.exit(code)
+
+
 def main():
+    exit(1, "Currently scri[t is not work! Wait at update")
+
     current_controller: zsh | neovim | kitty | fastfetch | btop | None = None
 
     choice: int = 0

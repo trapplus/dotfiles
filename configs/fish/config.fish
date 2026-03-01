@@ -20,6 +20,9 @@ if status is-interactive
         cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
     end
 
+if status is-interactive
+    fastfetch -c os
+end
     # --- Aliases ---
 
     # Terminal & Shell Utils
@@ -97,6 +100,7 @@ if status is-interactive
     # --- Hardware (RGB) ---
     alias rgboff 'openrgb -p off'
     alias rgbon 'openrgb -p main'
+    alias off "openrgb -o off&&poweroff"
 
 end
 
@@ -124,3 +128,5 @@ end
 if command -q zoxide
     zoxide init fish | source
 end
+
+set -U fish_user_paths "$HOME/.local/bin"

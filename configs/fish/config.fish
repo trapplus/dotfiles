@@ -28,7 +28,7 @@ if status is-interactive
     alias claer "printf '\033[2J\033[3J\033[1;1H'"
     alias c "clear"
     alias q "exit" 
-    aluas r "reset"
+    alias r "reset"
 
     # System & Monitoring
     alias ls 'eza --icons'

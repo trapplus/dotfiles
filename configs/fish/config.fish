@@ -20,9 +20,6 @@ if status is-interactive
         cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
     end
 
-if status is-interactive
-    fastfetch -c os
-end
     # --- Aliases ---
 
     # Terminal & Shell Utils
@@ -31,6 +28,8 @@ end
     alias claer "printf '\033[2J\033[3J\033[1;1H'"
     alias c "clear"
     alias q "exit" 
+    aluas r "reset"
+
     # System & Monitoring
     alias ls 'eza --icons'
     alias b 'btop'
@@ -43,7 +42,6 @@ end
     alias cfff 'clear; fastfetch -c groups'
 
     # Editor
-    alias n 'nvim'
     alias nano 'nvim'
     alias erc 'nvim ~/.config/fish/config.fish'
 
@@ -53,6 +51,7 @@ end
 
     # Package Manager
     alias pamcan 'pacman'
+    alias pm 'pacman'
 
     # Custom/Scripts
     alias mtk 'uv run ~/mtkclient/mtk.py'
@@ -65,11 +64,16 @@ end
     alias gcm 'git commit -m'
     alias gs 'git status'
     alias gad 'git add .'
+    alias ga 'git add'
+    alias gc 'git clone'
 
     # --- Programming ---
     alias d 'docker'
     alias py 'python3'
     alias cg 'cargo'
+    alias m 'make'
+    alias p 'pnpm'
+    alias n 'npm'
     
     # Python Venv Activation Function
     function pyv
@@ -94,13 +98,10 @@ end
     alias cd5 'cd ..; cd ..; cd ..; cd ..; cd ..'
     alias cd6 'cd ..; cd ..; cd ..; cd ..; cd ..; cd ..'
 
-    # --- Games ---
-    alias dota2 'steam -applaunch 570'
-
     # --- Hardware (RGB) ---
     alias rgboff 'openrgb -p off'
-    alias rgbon 'openrgb -p main'
-    alias off "openrgb -o off&&poweroff"
+    alias rgbon 'openrgb -p main_white'
+    alias po 'openrgb -p off && poweroff'
 
 end
 
@@ -110,10 +111,6 @@ end
 set -x PATH $HOME/.local/bin $PATH
 set -x PATH $PATH $HOME/.pub-cache/bin
 set -x PATH $HOME/.npm-global/bin $PATH
-
-# Flyctl
-set -x FLYCTL_INSTALL "$HOME/.fly"
-set -x PATH $FLYCTL_INSTALL/bin $PATH
 
 # Editor Logic (SSH Detection)
 if test -n "$SSH_CONNECTION"
@@ -128,5 +125,3 @@ end
 if command -q zoxide
     zoxide init fish | source
 end
-
-set -U fish_user_paths "$HOME/.local/bin"

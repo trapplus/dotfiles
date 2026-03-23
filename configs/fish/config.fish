@@ -29,6 +29,15 @@ function _cache_init
     source $cache_file
 end
 
+function _qss_init
+    # Quickshell Sequences (Hyprland integration)
+    # Запускаем в фоне (&) чтобы не блокировать старт терминала
+    if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
+        cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt &
+    end
+end
+
+
 # --- Интерактивная сессия ---
 if status is-interactive
     
@@ -47,14 +56,9 @@ if status is-interactive
         and not set -q SSH_CONNECTION
         fastfetch -c os
     end
-    # Quickshell Sequences (Hyprland integration)
-    # Запускаем в фоне (&) чтобы не блокировать старт терминала
-    if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
-        cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt &
-    end
-
     
-    
+    _qss_init
+     
     # --------------------------------------------------------
     # Aliases — Terminal & Shell Utils
     # --------------------------------------------------------
@@ -162,6 +166,9 @@ if status is-interactive
         end
     end
 
+    function reset
+        command reset && _qss_init
+    end
 end
 
 # ============================================================

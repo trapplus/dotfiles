@@ -21,21 +21,9 @@ echo -e "${GREEN}Dotfiles One-Line Installer${NC}"
 echo -e "${GREEN}========================================${NC}"
 echo ""
 
-# Default repository URL (replace with your actual GitHub repo)
-REPO_URL="${DOTFILES_REPO_URL:-https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git}"
+# Default repository URL
+REPO_URL="${DOTFILES_REPO_URL:-https://github.com/trapplus/dotfiles.git}"
 BRANCH="${DOTFILES_BRANCH:-main}"
-
-# Check if repository URL was provided
-if [ "$REPO_URL" = "https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git" ]; then
-    echo -e "${RED}ERROR: Repository URL not configured!${NC}"
-    echo ""
-    echo "Please set the DOTFILES_REPO_URL environment variable:"
-    echo "  export DOTFILES_REPO_URL=https://github.com/your-username/your-repo.git"
-    echo ""
-    echo "Or modify this script with your actual repository URL."
-    echo ""
-    exit 1
-fi
 
 # Install git if not present
 if ! command -v git &> /dev/null; then

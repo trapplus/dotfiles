@@ -24,16 +24,8 @@ This repository contains automated scripts for managing dotfiles configurations.
 
 ## Quick Install (One-Line)
 
-**Replace `YOUR_USERNAME` and `YOUR_REPO_NAME` with your actual GitHub username and repository name:**
-
 ```bash
-curl -fsSL https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO_NAME/main/scripts/installer.sh | bash
-```
-
-Or with custom repository URL:
-
-```bash
-export DOTFILES_REPO_URL=https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git && curl -fsSL https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO_NAME/main/scripts/installer.sh | bash
+curl -fsSL https://raw.githubusercontent.com/trapplus/dotfiles/main/scripts/installer.sh | bash
 ```
 
 ## Manual Installation
@@ -47,8 +39,8 @@ export DOTFILES_REPO_URL=https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git && 
 
 2. **Clone the repository**:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-   cd YOUR_REPO_NAME
+   git clone https://github.com/trapplus/dotfiles.git
+   cd dotfiles
    ```
 
 3. **Run the installation**:

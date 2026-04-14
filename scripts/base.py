@@ -46,7 +46,7 @@ class DotfileScript:
             print(f"[{self.config_name}] Creating backup at: {self.backup_dir}")
             if self.backup_dir.exists():
                 shutil.rmtree(self.backup_dir)
-            shutil.copytree(self.target_dir, self.backup_dir)
+            shutil.copytree(self.target_dir, self.backup_dir, symlinks=True, ignore_dangling_symlinks=True)
             print(f"[{self.config_name}] Backup created successfully")
 
         # Remove existing target directory

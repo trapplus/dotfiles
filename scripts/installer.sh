@@ -69,6 +69,7 @@ if [ -d "$TARGET_DIR" ]; then
         rm -rf "$TARGET_DIR"
     else
         echo -e "${YELLOW}Using existing directory...${NC}"
+        git -C "$TARGET_DIR" pull --rebase origin "$BRANCH"
     fi
 fi
 
